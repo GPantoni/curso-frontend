@@ -20,3 +20,31 @@ let endereco = 'endereco';
 let numero = 'numero';
 
 console.log(user[endereco][numero]); //2.d.
+
+
+const students = [
+    { id: 1, name: 'John Doe', age: 23, scholarship: false },
+    { id: 2, name: 'Margoe Rose', age: 19, scholarship: true },
+    { id: 3, name: 'Kayle', age: 22, scholarship: true },
+];
+
+//1.
+students.forEach((elem) => {
+    console.log(elem.name);
+});
+
+//2.
+students.forEach((elem) => {
+    if (elem.age > 20) {
+        console.log(elem.name, elem.age);
+    }
+});
+
+//3.
+let novoArray = [];
+students.forEach((elem) => {
+    if (elem.scholarship) {
+        novoArray.push(elem);
+    }
+});
+console.log(novoArray);
