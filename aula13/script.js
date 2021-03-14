@@ -164,3 +164,77 @@ const result11 = [...colaboradores].sort((a, b) => {
 });
 console.log("2.d.")
 console.log(result11)
+
+
+//DESAFIO EXTRA
+
+console.log("DESAFIO EXTRA")
+
+const installments = [
+    {
+        installment_number: 1,
+        value: 123.45,
+        status: 'Pago',
+    },
+    {
+        installment_number: 2,
+        value: 139.88,
+        status: 'Pago',
+    },
+    {
+        installment_number: 3,
+        value: 123.45,
+        status: 'Pago',
+    },
+    {
+        installment_number: 4,
+        value: 182.37,
+        status: 'Aberto',
+    },
+    {
+        installment_number: 5,
+        value: 133.93,
+        status: 'Aberto',
+    },
+];
+
+//1.a.
+const result12 = installments.reduce((acc, installment) => {
+    return acc + installment.value;
+}, 0);
+console.log('1.a.');
+console.log(parseFloat(result12.toFixed(2)));
+
+//1.b.
+const result13 = installments.reduce(
+    (acc, installment) => {
+        if (installment.status === 'Pago') {
+            return {
+                total_paid: acc.total_paid + installment.value,
+                total_open: acc.total_open,
+            };
+        } else {
+            return {
+                total_paid: acc.total_paid,
+                total_open: acc.total_open + installment.value,
+            };
+        }
+    },
+    { total_paid: 0, total_open: 0 }
+);
+console.log('1.b.')
+console.log(result13);
+
+//1.c.
+const result14 = [...installments].sort((a, b) => {
+    return b.value - a.value;
+});
+console.log('1.c.');
+console.log(result14);
+
+//1.d.
+const result15 = [...installments].sort((a, b) => {
+    return a.value - b.value || b.installment_number - a.installment_number;
+});
+console.log('1.d.');
+console.log(result15);
