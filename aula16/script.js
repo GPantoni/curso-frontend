@@ -68,3 +68,66 @@ console.log(third);
 console.log('2.c.');
 let [, { name }] = students;
 console.log(name);
+
+/*  DESAFIO 2
+1. Crie uma função que pode receber qualquer número de parâmetros e imprime eles separadamente no console.
+2. Crie uma função que recebe um objeto como parâmetro, desestrutura a propriedade nome desse objeto e imprime no console (realize a desestruturação nos próprios parâmetros).
+3. Crie uma função que recebe dois objetos e retorna um novo objeto que  é a combinação desses dois objetos. Não utilize o método Object.assign.
+4. Crie uma função que recebe dois arrays e retorna um novo array que é a concatenação desses dois arrays.
+*/
+
+//DESAFIO 2
+console.log('DESAFIO 2');
+
+//1.
+console.log('1.');
+const nParameters = (...rest) => {
+    console.log(...rest);
+};
+
+console.log(nParameters);
+console.log("Exemple: nParameters(6, '6')");
+nParameters(6, '6');
+
+//2.
+let obj1 = {
+    nome: 'Glauco',
+    idade: 29,
+};
+
+console.log('2.');
+const catchName = ({ nome }) => {
+    console.log(nome);
+};
+
+console.log(catchName);
+console.log('Exemple: catchName(obj1)');
+catchName(obj1);
+
+//3.
+let obj2 = {
+    idade: 30,
+    profissao: 'Dev',
+};
+
+console.log('3.');
+const fusao = (trunks, goten) => {
+    return { ...trunks, ...goten };
+};
+
+console.log(fusao);
+console.log('Exemple: fusao(obj1, obj2)');
+console.log(fusao(obj1, obj2));
+
+//4.
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = ['um', 'dois', 'três', 'quatro', 'cinco'];
+
+console.log('4.');
+const fusao2 = (goku, vegeta) => {
+    return [...goku, ...vegeta];
+};
+
+console.log(fusao2);
+console.log('Exemple: fusao2(arr1, arr2)');
+console.log(fusao2(arr1, arr2));
