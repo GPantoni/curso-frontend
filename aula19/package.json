@@ -1,0 +1,14 @@
+{
+  "name": "aula19",
+  "version": "1.0.0",
+  "description": "Estudo de gerenciamento de pacotes",
+  "main": "index.js",
+  "repository": "https://github.com/GPantoni/curso-frontend.git",
+  "author": "Glauco Pantoni",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "date-fns": "^2.19.0"
+  }
+}
