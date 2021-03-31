@@ -12,7 +12,7 @@ function App() {
   
   useEffect(() => {
     stateA ? setStateA(false) : console.log("Texto do anchor mudou!")
-  }, [valueA]);
+  }, [valueA, stateA]);
 
   const handleClick = () => {
     setValueA("Continue to Practice with React")
