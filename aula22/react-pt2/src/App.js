@@ -1,9 +1,13 @@
-import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import Sobre from "./Sobre";
-import Posts from "./Posts";
-import Comments from "./Comments";
+import { ToastContainer } from "react-toastify";
+
+import Home from "./routes/Home";
+import Sobre from "./routes/Sobre";
+import Posts from "./routes/Posts";
+import CreatePost from "./routes/CreatePost";
+import Comments from "./routes/Comments";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -15,6 +19,9 @@ function App() {
         <Route path="/posts">
           <Posts />
         </Route>
+        <Route path="/create-post">
+          <CreatePost />
+        </Route>
         <Route path="/comments">
           <Comments />
         </Route>
@@ -22,6 +29,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+      <ToastContainer />
     </Router>
   );
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Comment from "./Comment";
+import Comment from "../components/Comment";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
@@ -11,7 +11,6 @@ const Comments = () => {
         "http://jsonplaceholder.typicode.com/comments"
       );
       setComments(comments);
-      console.log("Usou getComments");
     };
     getComments();
   }, []);
